@@ -94,6 +94,7 @@ for (const uf of UF_ORDER) {
 
 const base = siteBase()
 writeConfigure(OUT, stateData, rootTotal, base)
+writeIndex(OUT, stateData, rootTotal)
 for (const uf of UF_ORDER) {
   writeConfigure(path.join(OUT, uf), stateData, rootTotal, base)
 }
@@ -216,4 +217,57 @@ document.getElementById('pclose').onclick = () => panel.classList.remove('show')
 </html>`
   writeText(dir, 'configure.html', html)
   writeText(path.join(dir, 'configure'), 'index.html', html)
+}
+
+function writeIndex(dir, states, rootTotal) {
+  const html = `<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TV Aberta BR — Addon para Stremio</title>
+<style>
+  :root { color-scheme: dark; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: system-ui, -apple-system, 'Segoe UI', sans-serif; background: #101220; color: #e9e9f2; min-height: 100vh; display: flex; flex-direction: column; }
+  main { flex: 1; max-width: 620px; margin: 0 auto; padding: 60px 20px; text-align: center; }
+  h1 { font-size: 30px; font-weight: 800; }
+  h1 span { color: #3f6cff; }
+  p.lead { color: #9aa0b5; margin-top: 12px; line-height: 1.6; }
+  .stats { display: flex; gap: 12px; justify-content: center; margin: 28px 0; flex-wrap: wrap; }
+  .stat { background: #171a2b; border: 1px solid #2b2f42; border-radius: 12px; padding: 14px 22px; }
+  .stat b { display: block; font-size: 22px; }
+  .stat span { font-size: 12px; color: #9aa0b5; }
+  .btn { display:inline-block; background:#3f6cff; color:#fff; border:none; border-radius:12px; padding:15px 28px; font-size:16px; font-weight:700; cursor:pointer; text-decoration:none; margin-top:8px; }
+  .btn.ghost { background:#262a3f; margin-left:8px; }
+  .tip { margin-top: 26px; font-size: 12.5px; color: #5a6076; line-height: 1.6; }
+  .tip code { background:#171a2b; border:1px solid #2b2f42; border-radius:6px; padding:2px 6px; color:#7ee2a8; }
+  footer { text-align:center; color:#5a6076; font-size:12px; padding: 20px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>📺 TV <span>Aberta</span> BR</h1>
+  <p class="lead">Addon de TV aberta para o Stremio: nacionais, educativas e canais regionais do seu estado. Lista curada e verificada automaticamente toda semana.</p>
+  <div class="stats">
+    <div class="stat"><b>${rootTotal}</b><span>canais no total</span></div>
+    <div class="stat"><b>${states.filter((s) => s.regional > 0).length}</b><span>estados com regionais</span></div>
+    <div class="stat"><b>100%</b><span>gratuito e estático</span></div>
+  </div>
+  <a class="btn" id="install" href="#">Instalar no Stremio</a>
+  <a class="btn ghost" href="./configure">Escolher estado</a>
+  <p class="tip">Não apareceu? Copie e cole no Stremio (Addons → botão ➕):
+    <br><code id="manifestUrl">carregando…</code></p>
+</main>
+<footer>Addon estático — hospedado de graça no GitHub Pages. Verificação automática toda segunda.</footer>
+<script>
+const root = new URL('.', location.href);
+const url = root.href + 'manifest.json';
+const stremio = 'stremio://' + location.host + root.pathname + 'manifest.json';
+document.getElementById('install').href = stremio;
+document.getElementById('manifestUrl').textContent = url;
+</script>
+</body>
+</html>`
+  writeText(dir, 'index.html', html)
 }
