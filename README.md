@@ -1,31 +1,34 @@
 # TV Aberta BR — Addon de Stremio
 
-Addon **estático** de TV aberta (pública/educativa) para o Stremio.
+Addon **estático** de TV aberta (pública, educativa e emissoras abertas) para o Stremio, com **filtro por estado**.
 Hospedado de graça no **GitHub Pages** e atualizado automaticamente toda segunda (cron via GitHub Actions).
 
-## Instalar no Stremio
+## Instalar no Stremio (com filtro por estado)
 
-1. Abra o Stremio → engrenagem (⚙️) → **Addons**
-2. Botão do sinal de mais (+) de **Community Addons**
-3. Cole a URL do seu addon e clique **Adicionar**:
+1. Abra o **Instalador do addon** no navegador:
 
 ```
-https://SEU_USUARIO.github.io/stremio-tv-aberta/manifest.json
+https://wagnecorreia.github.io/stremio-tv-aberta/configure
 ```
 
-4. Vá em **Discover** → veja o catálogo **TV Aberta** e clique em um canal pra assistir.
+2. Escolha seu **estado** (ou "Todas as emissoras").
+3. Clique em **Instalar no Stremio** (ou copie o link e cole em **Community Addons**).
+
+Cada estado é um addon separado, montado na hora: `https://SEU_USUARIO.github.io/stremio-tv-aberta/SP/manifest.json`.
+
+Também dá pra instalar direto, só com as emissoras nacionais:
+`https://SEU_USUARIO.github.io/stremio-tv-aberta/manifest.json`
 
 ## Como funciona
 
 | Arquivo | Papel |
 | --- | --- |
-| `sources/channels.json` | Lista currada (id, nome, logo, URL do stream) |
-| `scripts/verify.mjs` | Checa cada canal, marca mortos (`--prune` remove) |
-| `scripts/build.mjs` | Gera os JSON estáticos em `public/` |
-| `.github/workflows/**` | Cron semanal + deploy no Pages |
+| `sources/channels.json` | Lista curada: cada canal com `uf` (regional) ou sem (nacional) |
+| `scripts/verify.mjs` | Checa cada canal; `--prune` remove mortos, `--strict` remove duvidosos |
+| `scripts/build.mjs` | Gera addon raiz (todas) + 1 addon por UF + página `/configure` |
+| `.github/workflows/**` | Cron semanal (verificação) + deploy automático no Pages |
 
-As URLs servidas seguem o protocolo:
-`/manifest.json`, `/catalog/tv/tvaberta.json`, `/meta/tv/{id}.json`, `/stream/tv/{id}.json`.
+As URLs seguem o protocolo Stremio (por estado): `/SP/manifest.json`, `/SP/catalog/tv/tvaberta.json`, `/SP/stream/tv/{id}.json`, `/SP/meta/tv/{id}.json`.
 
 ## Adicionar / remover canais
 
@@ -33,38 +36,43 @@ Edite `sources/channels.json` e **publique** (`git push`). O GitHub Actions rebu
 
 ```json
 {
-  "id": "meucanal",
-  "name": "Meu Canal",
-  "logo": "https://exemplo.com/logo.png",
+  "id": "globo",
+  "name": "Globo (Sinal Aberto)",
+  "logo": "https://...",
   "url": "https://exemplo.com/stream.m3u8"
 }
 ```
-
-Dica: adicione `"referrer": "https://siteexigido.com"` se o stream exigir cabeçalho `Referer`.
+- Sem campo `uf` → canal **nacional** (aparece em todos os estados).
+- Com `"uf": ["MG"]` → canal **regional** (aparece só no catálogo de MG).
 
 ## Verificação manual local
 
 ```sh
-npm run verify        # mostra status de cada canal
-npm run verify -- --prune   # remove os mortos do channels.json
-npm run build         # gera public/ (teste: npm run start)
+npm run verify                    # status de cada canal
+npm run verify -- --prune         # remove mortos (padrão do cron)
+npm run verify -- --prune --strict  # remove mortos e duvidosos (curadoria inicial)
+npm run build                     # regera public/ (teste: npm run start)
 ```
 
 ## Deploy (uma vez só)
 
-1. Crie o repo e suba:
+1. Repo no GitHub:
    ```sh
    git init && git add -A && git commit -m "tv aberta"
    gh repo create stremio-tv-aberta --public --source=. --push
    ```
-2. Ative o Pages como build por **Actions**:
+2. Ative Pages como build por **Actions**:
    ```sh
-   gh api --method POST repos/SEU_USUARIO/stremio-tv-aberta/pages \
-     -f build_type=workflow -f source=actions
+   gh api --method POST repos/SEU_USUARIO/stremio-tv-aberta/pages -f build_type=workflow
    ```
-3. Rode o workflow **deploy-pages** uma vez ou faça um push. A URL fica em
-   `https://SEU_USUARIO.github.io/stremio-tv-aberta/manifest.json`.
+3. Rode o workflow **deploy-pages** (ou faça um push). URL:
+   `https://SEU_USUARIO.github.io/stremio-tv-aberta/manifest.json`
+
+## Cron
+
+- `update-channels`: **toda segunda 04:00 UTC** — verifica os links e poda mortos.
+- O commit da poda dispara `deploy-pages`, que rebuida e republica sozinho.
 
 ## Aviso
 
-Canais abertos dependem de fontes públicas que caem do nada. O cron semanal poda os mortos — se um canal sumir do catálogo, é isso. Contribua novos links no `channels.json` quando souber de fonte nova.
+Fontes de TV aberta caem do nada. O cron poda semanalmente; se um canal sumir do catálogo, é isso. Contribua novos links no `channels.json` (prefira streams públicos e estáveis).

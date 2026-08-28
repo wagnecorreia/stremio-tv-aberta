@@ -5,6 +5,7 @@ import path from 'node:path'
 const ROOT = path.dirname(path.dirname(fileURLToPath(import.meta.url)))
 const SRC = path.join(ROOT, 'sources', 'channels.json')
 const PRUNE = process.argv.includes('--prune')
+const STRICT = process.argv.includes('--strict')
 const TIMEOUT_MS = 12000
 
 const sources = JSON.parse(readFileSync(SRC, 'utf8'))
@@ -50,12 +51,13 @@ for (const ch of channels) {
 
 console.log(`\n${ok} ok | ${hmm} em duvida | ${dead} mortos (de ${channels.length})`)
 
-if (PRUNE && dead > 0) {
-  const kept = channels.filter((c) => c._check.status !== 'dead')
+if (PRUNE) {
+  const dropWatch = STRICT ? ['dead', 'hmm'] : ['dead']
+  const kept = channels.filter((c) => !dropWatch.includes(c._check.status))
   deleteActually(kept)
   sources.channels = kept
   writeFileSync(SRC, JSON.stringify(sources, null, 2) + '\n', 'utf8')
-  console.log(`\nPodando ${dead} canais mortos. channels.json atualizado (${kept.length})`)
+  console.log(`\nPodando ${channels.length - kept.length} canais. channels.json atualizado (${kept.length})`)
 }
 
 function deleteActually(chans) {
