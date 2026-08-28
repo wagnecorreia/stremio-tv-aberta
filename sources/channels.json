@@ -1,0 +1,77 @@
+{
+  "version": "1.0.0",
+  "channels": [
+    {
+      "id": "tvcultura",
+      "name": "TV Cultura",
+      "logo": "https://i.ibb.co/nm0jXMM/cultura-3x.png",
+      "url": "http://45.162.64.114/TV_CULTURA/index.m3u8"
+    },
+    {
+      "id": "tvbrasil",
+      "name": "TV Brasil",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/TvBrasil2023.png/960px-TvBrasil2023.png",
+      "url": "http://45.162.64.114/TV_BRASIL/index.m3u8"
+    },
+    {
+      "id": "tvecultura",
+      "name": "TVE Cultura",
+      "logo": "https://i.imgur.com/FpqoWcB.png",
+      "url": "http://45.190.28.50/TVE/index.m3u8"
+    },
+    {
+      "id": "tvers",
+      "name": "TVE RS",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/TVE_Bahia_logo.svg/960px-TVE_Bahia_logo.svg.png",
+      "url": "http://streaming.procergs.com.br:1935/tve/stve/playlist.m3u8"
+    },
+    {
+      "id": "canalfutura",
+      "name": "Canal Futura",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Canal_Futura.png/960px-Canal_Futura.png",
+      "url": "http://168.197.104.22/FUTURA/index.m3u8"
+    },
+    {
+      "id": "canalgov",
+      "name": "Canal Gov",
+      "logo": "https://i.imgur.com/rHPY0Yv.png",
+      "url": "http://45.177.114.115/TV_BRASIL_2/index.m3u8"
+    },
+    {
+      "id": "tvbrics",
+      "name": "TV BRICS (PT)",
+      "logo": "https://i.imgur.com/vLpm8tN.png",
+      "url": "https://porbrics.mediacdn.ru/cdn/brics/portuguese/playlist.m3u8"
+    },
+    {
+      "id": "france24_en",
+      "name": "France 24 English",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/France_24_logo.svg/512px-France_24_logo.svg.png",
+      "url": "https://static.france24.com/live/F24_EN_LO_HLS/live_web.m3u8"
+    },
+    {
+      "id": "arirang",
+      "name": "Arirang TV",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Arirang_TV_logo.png/512px-Arirang_TV_logo.png",
+      "url": "https://amdlive-ch01-ctnd-com.akamaized.net/arirang_1ch/smil:arirang_1ch.smil/playlist.m3u8"
+    },
+    {
+      "id": "trtworld",
+      "name": "TRT World",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/TRT_World_logo.svg/512px-TRT_World_logo.svg.png",
+      "url": "https://tv-trtworld.medya.trt.com.tr/master.m3u8"
+    },
+    {
+      "id": "dw_en",
+      "name": "DW English",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Deutsche_Welle_Logo.svg/512px-Deutsche_Welle_Logo.svg.png",
+      "url": "https://dwamdstream103.akamaized.net/hls/live/2015526/dwstream103/index.m3u8"
+    },
+    {
+      "id": "euronews",
+      "name": "Euronews",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Euronews_2022_logo.svg/512px-Euronews_2022_logo.svg.png",
+      "url": "http://45.190.28.50/EURONEWS_HD/index.m3u8"
+    }
+  ]
+}
