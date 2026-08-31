@@ -272,15 +272,6 @@
       ]
     },
     {
-      "id": "tve-rs",
-      "name": "TVE RS",
-      "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/TVE_Bahia_logo.svg/960px-TVE_Bahia_logo.svg.png",
-      "url": "http://streaming.procergs.com.br:1935/tve/stve/playlist.m3u8",
-      "uf": [
-        "RS"
-      ]
-    },
-    {
       "id": "tv-passo-fundo",
       "name": "TV Passo Fundo",
       "logo": "https://i.imgur.com/QFE6TiV.png",
