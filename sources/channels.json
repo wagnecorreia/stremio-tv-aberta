@@ -83,15 +83,6 @@
       ]
     },
     {
-      "id": "tv-ufop",
-      "name": "TV UFOP",
-      "logo": "https://raw.githubusercontent.com/daniloroxette/tvufop/refs/heads/main/images/tvufop_logo.png",
-      "url": "https://app.tvufop.com.br/hls/tvufop.m3u8",
-      "uf": [
-        "MG"
-      ]
-    },
-    {
       "id": "tv-vicosa",
       "name": "TV Viçosa",
       "logo": "https://i.imgur.com/TZF55f9.png",
