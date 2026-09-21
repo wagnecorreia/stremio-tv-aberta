@@ -110,15 +110,6 @@
       ]
     },
     {
-      "id": "tv-marajoara",
-      "name": "TV Marajoara",
-      "logo": "https://i.imgur.com/9d9vBN7.png",
-      "url": "https://tv02.zas.media:1936/tvmarajoara/tvmarajoara/playlist.m3u8",
-      "uf": [
-        "PA"
-      ]
-    },
-    {
       "id": "tv-paraense",
       "name": "TV Paraense",
       "logo": "https://duckduckgo.com/i/e408ea02.png",
