@@ -314,12 +314,6 @@
       "url": "http://168.197.104.22/FUTURA/index.m3u8"
     },
     {
-      "id": "canalgov",
-      "name": "Canal Gov",
-      "logo": "https://i.imgur.com/rHPY0Yv.png",
-      "url": "http://45.177.114.115/TV_BRASIL_2/index.m3u8"
-    },
-    {
       "id": "globo",
       "name": "Globo (Sinal Aberto)",
       "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Rede_Globo_logo.svg/512px-Rede_Globo_logo.svg.png",
@@ -384,12 +378,6 @@
       "name": "Canal Educação",
       "logo": "https://i.imgur.com/G0x4xqa.png",
       "url": "http://45.162.64.114/CANAL_EDUCACAO/index.m3u8"
-    },
-    {
-      "id": "ratimbum",
-      "name": "TV Rá Tim Bum",
-      "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/TV_R%C3%A1-Tim-Bum_logo.png/512px-TV_R%C3%A1-Tim-Bum_logo.png",
-      "url": "http://45.177.114.115/TV_RA_TIM_BUM/index.m3u8"
     },
     {
       "id": "amazonsat",
