@@ -47,15 +47,6 @@
       ]
     },
     {
-      "id": "tvcom-df",
-      "name": "TVCOM DF",
-      "logo": "https://i.imgur.com/uxefHY3.png",
-      "url": "https://5b7f3c45ab7c2.streamlock.net/8008/smil:8008.smil/playlist.m3u8?DVR=",
-      "uf": [
-        "DF"
-      ]
-    },
-    {
       "id": "tv-sim-cachoeiro",
       "name": "TV Sim Cachoeiro",
       "logo": "https://i.imgur.com/t5oUK3C.png",
@@ -116,15 +107,6 @@
       "url": "https://video09.logicahost.com.br/tvparaense/tvparaense/playlist.m3u",
       "uf": [
         "PA"
-      ]
-    },
-    {
-      "id": "tv-arapuan",
-      "name": "TV Arapuan",
-      "logo": "https://i.imgur.com/3395A2h.png",
-      "url": "https://5b7f3c45ab7c2.streamlock.net/arapuan/ngrp:arapuan_all/playlist.m3u8",
-      "uf": [
-        "PB"
       ]
     },
     {
