@@ -272,18 +272,6 @@
       ]
     },
     {
-      "id": "tvcultura",
-      "name": "TV Cultura",
-      "logo": "https://i.ibb.co/nm0jXMM/cultura-3x.png",
-      "url": "http://45.162.64.114/TV_CULTURA/index.m3u8"
-    },
-    {
-      "id": "tvbrasil",
-      "name": "TV Brasil",
-      "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/TvBrasil2023.png/960px-TvBrasil2023.png",
-      "url": "http://45.162.64.114/TV_BRASIL/index.m3u8"
-    },
-    {
       "id": "tvecultura",
       "name": "TVE Cultura",
       "logo": "https://i.imgur.com/FpqoWcB.png",
@@ -326,12 +314,6 @@
       "url": "http://45.190.28.50/REDE_TV_HD/index.m3u8"
     },
     {
-      "id": "gazeta",
-      "name": "TV Gazeta",
-      "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/TV_Gazeta_logo.svg/512px-TV_Gazeta_logo.svg.png",
-      "url": "http://45.162.64.114/GAZETA/index.m3u8"
-    },
-    {
       "id": "tvescola",
       "name": "TV Escola",
       "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/TV_Escola_logo.png/512px-TV_Escola_logo.png",
@@ -344,46 +326,16 @@
       "url": "https://stream3.camara.gov.br/tv1/manifest.m3u8"
     },
     {
-      "id": "tvsenado",
-      "name": "TV Senado",
-      "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/TV_Senado_-_logo_2018.png/512px-TV_Senado_-_logo_2018.png",
-      "url": "http://45.162.64.114/TV_SENADO/index.m3u8"
-    },
-    {
-      "id": "tvjustica",
-      "name": "TV Justiça",
-      "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/TV_Justi%27%C3%A7a_logo.png/512px-TV_Justi%27%C3%A7a_logo.png",
-      "url": "http://45.162.64.114/TV_JUSTICA/index.m3u8"
-    },
-    {
-      "id": "canaleducacao",
-      "name": "Canal Educação",
-      "logo": "https://i.imgur.com/G0x4xqa.png",
-      "url": "http://45.162.64.114/CANAL_EDUCACAO/index.m3u8"
-    },
-    {
       "id": "amazonsat",
       "name": "Amazon Sat",
       "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Amazon_Sat_logo.png/512px-Amazon_Sat_logo.png",
       "url": "https://amazonsat.brasilstream.com.br/hls/amazonsat/index.m3u8"
     },
     {
-      "id": "agromais",
-      "name": "AgroMais",
-      "logo": "https://i.imgur.com/9f3J8I2.png",
-      "url": "http://45.162.64.114/AGROMAIS/index.m3u8"
-    },
-    {
       "id": "aparecida",
       "name": "TV Aparecida",
       "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/TV_Aparecida_logo.png/512px-TV_Aparecida_logo.png",
       "url": "https://cdn.jmvstream.com/w/LVW-9716/LVW9716_HbtQtezcaw/playlist.m3u8"
-    },
-    {
-      "id": "cancaonova",
-      "name": "TV Canção Nova",
-      "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Logo_CN_com_RGBA.png/512px-Logo_CN_com_RGBA.png",
-      "url": "http://45.162.64.114/CANCAO_NOVA/index.m3u8"
     },
     {
       "id": "redevida",
